@@ -1,0 +1,11 @@
+.contactList {
+  list-style-type: none;
+}
+
+.contactList li {
+  margin-bottom: 50px;
+}
+
+.contactList li h3 {
+  color: #2b30a3;
+}

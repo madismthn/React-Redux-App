@@ -7,12 +7,12 @@ import {
 import { useSelector } from "react-redux";
 import "./App.css";
 
-import Home from "./components/Home/Home";
-import { Posts } from "./components/Posts";
-import PostDetail from "./components/PostDetails/PostDetails";
+import Home from "./components/Pages/Home/Home";
+import { Posts } from "./components/Pages/Posts/index";
+import PostDetail from "./components/Pages/Posts/PostDetails/PostDetails";
 
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+import About from "./components/Pages/About/About";
+import Contact from "./components/Pages/Contact/Contact";
 
 function App() {
   const posts = useSelector((state) => state.posts.list);
@@ -29,7 +29,7 @@ function App() {
       ) : (
         <>
           <Router>
-            <nav>
+            <nav className="navigation">
               <NavLink to="/">Home</NavLink>
 
               <NavLink to="/about">About</NavLink>

@@ -1,8 +1,9 @@
-import { Button, Form, Input } from "antd";
+import { Form, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewPost } from "../../store/slices/posts";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
+import { Button } from "../Button/Button";
 
 const layout = {
   labelCol: {
@@ -89,9 +90,9 @@ export const AddPostForm = () => {
             </Button>
           </Form.Item>
         </Form>
-        <button onClick={() => setModal(false)}>
+        <Button onClick={() => setModal(false)}>
           Закрыть форму добавления поста
-        </button>
+        </Button>
       </Modal>
     </>
   );
