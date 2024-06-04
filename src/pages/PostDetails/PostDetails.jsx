@@ -9,7 +9,7 @@ import heartIconRed from "../../assets/heart-red.svg";
 
 import s from "./style.module.css";
 
-export const PostDetail = () => {
+export default function PostDetails() {
   const dispatch = useDispatch();
 
   const handleLikeSwitch = (likedPost) => {
@@ -45,6 +45,4 @@ export const PostDetail = () => {
       </Button>
     </div>
   );
-};
-
-export default PostDetail;
+}

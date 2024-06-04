@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 
 import Home from "./pages/Home/Home";
 import { Posts } from "./pages/Posts/index";
-import PostDetail from "./pages/PostDetails/PostDetails";
+import PostDetails from "./pages/PostDetails/PostDetails";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 
@@ -28,7 +28,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/posts/:postId" element={<PostDetail />} />
+              <Route path="/posts/:postId" element={<PostDetails />} />
               <Route path="/posts" element={<Posts />} />
             </Routes>
           </Router>
