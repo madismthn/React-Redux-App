@@ -1,18 +1,15 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  NavLink,
-} from "react-router-dom";
 import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navigation from "./components/Navigation/Navigation";
+
+import Home from "./pages/Home/Home";
+import { Posts } from "./pages/Posts/index";
+import PostDetail from "./pages/PostDetails/PostDetails";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+
 import "./App.css";
-
-import Home from "./components/Pages/Home/Home";
-import { Posts } from "./components/Pages/Posts/index";
-import PostDetail from "./components/Pages/Posts/PostDetails/PostDetails";
-
-import About from "./components/Pages/About/About";
-import Contact from "./components/Pages/Contact/Contact";
 
 function App() {
   const posts = useSelector((state) => state.posts.list);
@@ -22,23 +19,11 @@ function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
-
-      {isFirstLoading ? (
-        <h1>Loading...</h1>
-      ) : (
+      {isFirstLoading && <h1>Loading...</h1>}
+      {!isFirstLoading && (
         <>
           <Router>
-            <nav className="navigation">
-              <NavLink to="/">Home</NavLink>
-
-              <NavLink to="/about">About</NavLink>
-
-              <NavLink to="/contact">Contact</NavLink>
-
-              <NavLink to="/posts">Posts</NavLink>
-            </nav>
-
+            <Navigation />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

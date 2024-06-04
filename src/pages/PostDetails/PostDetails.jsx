@@ -1,13 +1,15 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { likePost } from "../../../../store/slices/posts";
-import heartIconBlack from "../../../../assets/heart-black.svg";
-import heartIconRed from "../../../../assets/heart-red.svg";
-import { Button } from "../../../Button/Button";
+
+import { likePost } from "../../store/slices/posts";
+import { Button } from "../../components/Button/Button";
+
+import heartIconBlack from "../../assets/heart-black.svg";
+import heartIconRed from "../../assets/heart-red.svg";
+
 import s from "./style.module.css";
 
-const PostDetail = () => {
+export const PostDetail = () => {
   const dispatch = useDispatch();
 
   const handleLikeSwitch = (likedPost) => {

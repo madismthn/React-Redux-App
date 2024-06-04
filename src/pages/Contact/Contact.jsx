@@ -3,7 +3,7 @@ import pageStyle from "../style.module.css";
 
 export default function Contact() {
   return (
-    <>
+    <div className="contact">
       <h1 className={pageStyle.title}>Contact</h1>
       <div className={pageStyle.content}>
         <ul className={s.contactList}>
@@ -21,6 +21,6 @@ export default function Contact() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,8 +1,10 @@
-import { Form, Input } from "antd";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import { Form, Input } from "antd";
+
 import { addNewPost } from "../../store/slices/posts";
 import Modal from "../Modal/Modal";
-import { useState } from "react";
 import { Button } from "../Button/Button";
 
 const layout = {

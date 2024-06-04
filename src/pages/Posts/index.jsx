@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./style.module.css";
 import pageStyle from "../style.module.css";
-import Post from "./Post/Post";
-import { EditPostForm } from "../../EditPostForm/index";
-import Modal from "../../Modal/Modal";
-import { AddPostForm } from "../../AddPostForm/index";
-import { getPosts } from "../../../store/slices/posts";
+import Post from "../Post/Post";
+import { EditPostForm } from "../../components/EditPostForm/index";
+import Modal from "../../components/Modal/Modal";
+import { AddPostForm } from "../../components/AddPostForm/index";
+import { getPosts } from "../../store/slices/posts";
 import { NavLink } from "react-router-dom";
-import { Button } from "../../Button/Button";
+import { Button } from "../../components/Button/Button";
 
 export const Posts = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ export const Posts = () => {
   }
 
   return (
-    <>
+    <div className="posts">
       <h1 className={pageStyle.title}>Posts</h1>
       <div className={pageStyle.content}>
         <AddPostForm />
@@ -48,7 +48,7 @@ export const Posts = () => {
 
         {posts.map((post, index) => {
           return (
-            <>
+            <Fragment key={post.id}>
               <Post
                 className={s.post}
                 buttonsClassName={s.buttons}
@@ -60,10 +60,10 @@ export const Posts = () => {
               <NavLink to={`/posts/${post.id}`}>
                 <Button>Подробнее</Button>
               </NavLink>
-            </>
+            </Fragment>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };

@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import { deletePost, likePost } from "../../../../store/slices/posts";
-import { useParams } from "react-router-dom";
-import heartIconBlack from "../../../../assets/heart-black.svg";
-import heartIconRed from "../../../../assets/heart-red.svg";
-import { Button } from "../../../Button/Button";
+import { deletePost, likePost } from "../../store/slices/posts";
+
+import heartIconBlack from "../../assets/heart-black.svg";
+import heartIconRed from "../../assets/heart-red.svg";
+import { Button } from "../../components/Button/Button";
 
 export default function Post({
   className,
@@ -22,8 +22,6 @@ export default function Post({
     dispatch(likePost(likedPost));
   };
 
-  const params = useParams();
-  console.log(params);
   return (
     <div className={className} key={post.id}>
       <h3>
