@@ -8,3 +8,11 @@
 .title {
   color: #2b30a3;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}

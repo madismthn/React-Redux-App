@@ -4,7 +4,6 @@ import { Button } from "../../components/Button/Button";
 import heartIconBlack from "../../assets/heart-black.svg";
 import heartIconRed from "../../assets/heart-red.svg";
 
-
 export default function Post({
   className,
   post,
