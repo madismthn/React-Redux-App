@@ -17,7 +17,7 @@ const layout = {
 };
 
 const validateMessages = {
-  required: "Поле ${label} обязательно!",
+  required: "${label} is required!",
 };
 
 export const AddPostForm = () => {
@@ -42,7 +42,7 @@ export const AddPostForm = () => {
 
   return (
     <>
-      <Button onClick={() => showAddPostForm()}>Добавить новый пост</Button>
+      <Button onClick={() => showAddPostForm()}>Add new post</Button>
       <Modal open={modal}>
         <Form
           {...layout}
@@ -88,13 +88,11 @@ export const AddPostForm = () => {
               htmlType="submit"
               onClick={() => setModal(false)}
             >
-              Создать пост
+              Create a new post
             </Button>
           </Form.Item>
         </Form>
-        <Button onClick={() => setModal(false)}>
-          Закрыть форму добавления поста
-        </Button>
+        <Button onClick={() => setModal(false)}>Close add form</Button>
       </Modal>
     </>
   );

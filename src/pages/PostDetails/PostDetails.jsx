@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 
 import { likePost } from "../../store/slices/posts";
 import { Button } from "../../components/Button/Button";
@@ -7,9 +7,10 @@ import { Button } from "../../components/Button/Button";
 import heartIconBlack from "../../assets/heart-black.svg";
 import heartIconRed from "../../assets/heart-red.svg";
 
+import pageStyle from "../style.module.css";
 import s from "./style.module.css";
 
-export default function PostDetails() {
+const PostDetails = () => {
   const dispatch = useDispatch();
 
   const handleLikeSwitch = (likedPost) => {
@@ -27,8 +28,8 @@ export default function PostDetails() {
 
   return (
     <div className={s.post}>
-      <h1 className={s.title}>{post.title}</h1>
-      <p>{post.description}</p>
+      <h1 className={pageStyle.title}>{post.title}</h1>
+      <p className={pageStyle.content}>{post.foolDescription}</p>
       <Button onClick={() => handleLikeSwitch(post)}>
         {post.liked && (
           <img width="20px" className="heart" src={heartIconRed} alt="Heart" />
@@ -43,6 +44,9 @@ export default function PostDetails() {
           />
         )}
       </Button>
+      <NavLink to="/posts">Back to posts</NavLink>
     </div>
   );
-}
+};
+
+export default PostDetails;

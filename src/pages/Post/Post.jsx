@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../store/slices/posts";
-
+import { Button } from "../../components/Button/Button";
 import heartIconBlack from "../../assets/heart-black.svg";
 import heartIconRed from "../../assets/heart-red.svg";
-import { Button } from "../../components/Button/Button";
+
 
 export default function Post({
   className,

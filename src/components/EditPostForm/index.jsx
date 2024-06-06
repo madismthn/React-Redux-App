@@ -12,7 +12,7 @@ const layout = {
 };
 
 const validateMessages = {
-  required: "Поле ${label} обязательно!",
+  required: "${label} is required!",
 };
 
 export const EditPostForm = ({ selectedPost }) => {
@@ -74,7 +74,7 @@ export const EditPostForm = ({ selectedPost }) => {
         }}
       >
         <Button loading={loading} type="primary" htmlType="submit">
-          Сохранить
+          Save
         </Button>
       </Form.Item>
     </Form>

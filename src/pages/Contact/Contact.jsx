@@ -8,16 +8,16 @@ export default function Contact() {
       <div className={pageStyle.content}>
         <ul className={s.contactList}>
           <li>
-            <h3>Телефон</h3>
+            <h3>Phone number</h3>
             <div>8 988 999 88 99</div>
           </li>
           <li>
-            <h3>Почта</h3>
+            <h3>Email</h3>
             <div>pochta@mail.ru</div>
           </li>
           <li>
-            <h3>Адрес</h3>
-            <div>Дахадаева 88к2</div>
+            <h3>Address</h3>
+            <div>Street 1</div>
           </li>
         </ul>
       </div>

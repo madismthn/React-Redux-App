@@ -1,6 +1,9 @@
 .post {
   align-items: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 .title {
   color: #2b30a3;

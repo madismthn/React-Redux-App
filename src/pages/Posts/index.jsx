@@ -1,14 +1,17 @@
 import { useState, useEffect, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import s from "./style.module.css";
-import pageStyle from "../style.module.css";
+import { NavLink } from "react-router-dom";
+
+import { getPosts } from "../../store/slices/posts";
+
 import Post from "../Post/Post";
 import { EditPostForm } from "../../components/EditPostForm/index";
-import Modal from "../../components/Modal/Modal";
 import { AddPostForm } from "../../components/AddPostForm/index";
-import { getPosts } from "../../store/slices/posts";
-import { NavLink } from "react-router-dom";
+import Modal from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
+
+import pageStyle from "../style.module.css";
+import s from "./style.module.css";
 
 export const Posts = () => {
   const dispatch = useDispatch();
@@ -31,7 +34,7 @@ export const Posts = () => {
   if (error) return <h2>{error.message}</h2>;
 
   if (loading === false && posts.length === 0) {
-    return <h1>Нет данных</h1>;
+    return <h1>No data</h1>;
   }
 
   return (
@@ -58,7 +61,7 @@ export const Posts = () => {
                 onClick={() => showEditPostForm(post)}
               />
               <NavLink to={`/posts/${post.id}`}>
-                <Button>Подробнее</Button>
+                <Button>Read more</Button>
               </NavLink>
             </Fragment>
           );
